@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Création de la vue liste acte -->
+    <record id="cdns_acte_view_list" model="ir.ui.view">
+        <field name="name">cdns.acte.view.list</field>
+        <field name="model">cdns.acte</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" />
+                <field name="date_acte" />
+                <field name="type_acte" />
+                <field name="montant" />
+                <field name="dossier_id" />
+            </list>
+        </field>
+    </record>
+    
+    <!-- Création de la vue form acte -->
+    <record id="cdns_acte_view_form" model="ir.ui.view">
+        <field name="name">cdns.acte.view.form</field>
+        <field name="model">cdns.acte</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="date_acte" />
+                            <field name="type_acte" />
+                        </group>
+                         <group>
+                           <field name="montant" />
+                            <field name="dossier_id" />
+                            <field name="status" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="liste_bien" string="Liste des biens">
+                            <field name="bien_ids" />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action du menu acte -->
+    <record model="ir.actions.act_window" id="action_menu_acte">
+        <field name="name">Actes</field>
+        <field name="res_model">cdns.acte</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="cdns_acte_view_list"/>
+    </record>
+
+</odoo>

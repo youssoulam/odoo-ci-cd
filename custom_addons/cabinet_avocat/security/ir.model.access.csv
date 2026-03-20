@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+acces_cabinet_avocat_avocat_user_admin,cabinet.avocat.avocat,model_cabinet_avocat_avocat,base.group_system,1,1,1,1
+acces_cabinet_avocat_affaire_user_admin,cabinet.avocat.affaire,model_cabinet_avocat_affaire,base.group_system,1,1,1,1
+acces_cabinet_avocat_audience_user_admin,cabinet.avocat.audience,model_cabinet_avocat_audience,base.group_system,1,1,1,1
+acces_cabinet_avocat_client_user_admin,cabinet.avocat.client,model_cabinet_avocat_client,base.group_system,1,1,1,1
+acces_cabinet_avocat_speciality_user_admin,cabinet.avocat.speciality,model_cabinet_avocat_speciality,base.group_system,1,1,1,1

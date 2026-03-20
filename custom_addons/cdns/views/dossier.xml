@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <!-- ============================= -->
+    <!-- VUE LISTE -->
+    <!-- ============================= -->
+
+    <record id="cdns_dossier_view_list" model="ir.ui.view">
+        <field name="name">cdns.dossier.view.list</field>
+        <field name="model">cdns.dossier</field>
+
+        <field name="arch" type="xml">
+
+            <list>
+
+                <field name="name"/>
+                <field name="notaire_id"/>
+                <field name="client_id"/>
+                <field name="date_ouverture"/>
+                <field name="objet"/>
+                <field name="frais_dossier"/>
+                <field name="status"/>
+
+            </list>
+
+        </field>
+    </record>
+
+
+    <!-- ============================= -->
+    <!-- VUE FORM -->
+    <!-- ============================= -->
+
+    <record id="cdns_dossier_view_form" model="ir.ui.view">
+        <field name="name">cdns.dossier.view.form</field>
+        <field name="model">cdns.dossier</field>
+
+        <field name="arch" type="xml">
+
+            <form>
+
+                <!-- HEADER WORKFLOW -->
+
+                <header>
+
+                    <button name="action_start"
+                            type="object"
+                            string="Démarrer"
+                            class="btn-primary"
+                            invisible="status != 'nouveau'"/>
+
+                    <button name="action_done"
+                            type="object"
+                            string="Marquer Traité"
+                            class="btn-success"
+                            invisible="status != 'encours'"/>
+
+                    <button name="action_archive"
+                            type="object"
+                            string="Archiver"
+                            class="btn-secondary"
+                            invisible="status != 'traite'"/>
+
+                    <field name="status"
+                           widget="statusbar"
+                           statusbar_visible="nouveau,encours,traite,archive"/>
+
+                </header>
+
+
+                <sheet>
+
+                    <!-- SMART BUTTON -->
+
+                    <div class="oe_button_box" name="button_box">
+
+                        <button name="action_view_documents"
+                                type="object"
+                                class="oe_stat_button"
+                                icon="fa-file">
+
+                            <field name="document_count"
+                                   widget="statinfo"
+                                   string="Documents"/>
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- FORMULAIRE -->
+
+                    <group>
+
+                        <group>
+
+                            <field name="name"/>
+                            <field name="notaire_id"/>
+                            <field name="client_id"/>
+                            <field name="date_ouverture"/>
+
+                        </group>
+
+                        <group>
+
+                            <field name="objet"/>
+                            <field name="frais_dossier"/>
+                            <field name="status"/>
+
+                        </group>
+
+                    </group>
+
+                </sheet>
+
+            </form>
+
+        </field>
+
+    </record>
+
+
+    <!-- ============================= -->
+    <!-- ACTION MENU -->
+    <!-- ============================= -->
+
+    <record id="action_menu_dossier" model="ir.actions.act_window">
+
+        <field name="name">Dossiers</field>
+        <field name="res_model">cdns.dossier</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="cdns_dossier_view_list"/>
+
+    </record>
+
+</odoo>

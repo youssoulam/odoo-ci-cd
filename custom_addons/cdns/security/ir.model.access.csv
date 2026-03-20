@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+acces_cdns_notaire_user_admin,cdns.notaire,model_cdns_notaire,base.group_system,1,1,1,1
+acces_cdns_client_user_admin,cdns.client,model_cdns_client,base.group_system,1,1,1,1
+acces_cdns_dossier_user_admin,cdns.dossier,model_cdns_dossier,base.group_system,1,1,1,1
+acces_cdns_acte_user_admin,cdns.acte,model_cdns_acte,base.group_system,1,1,1,1
+acces_cdns_bien_user_admin,cdns.bien,model_cdns_bien,base.group_system,1,1,1,1

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+   <menuitem
+    id="cabinet_avocat"
+    name="Cabinet d'avocat"
+    sequence="0"/>
+    <menuitem
+        id="cabinet_avocat_personne"
+        name="Personnes"
+        parent="cabinet_avocat"
+        sequence="1"/>
+    <menuitem
+        id="cabinet_avocat_avocat"
+        name="Avocat"
+        action="action_menu_avocat"
+        parent="cabinet_avocat_personne"
+        sequence="1"/>
+    <menuitem
+        id="cabinet_avocat_client"
+        name="Client"
+        action="action_menu_client"
+        parent="cabinet_avocat_personne"
+        sequence="2"/>
+    <menuitem
+        id="cabinet_avocat_conf"
+        name="Configuration"
+        parent="cabinet_avocat"
+        sequence="2"/>
+    <menuitem
+        id="cabinet_avocat_audience"
+        name="Audience"
+        action="action_menu_audience"
+        parent="cabinet_avocat_conf"
+        sequence="1"/>
+    <menuitem
+        id="cabinet_avocat_affaire"
+        name="Affaire"
+        action="action_menu_affaire"
+        parent="cabinet_avocat_conf"
+        sequence="2"/>
+    <menuitem
+        id="cabinet_avocat_speciality"
+        name="Spécialité"
+        action="action_menu_speciality"
+        parent="cabinet_avocat_conf"
+        sequence="3"/>
+
+</odoo>

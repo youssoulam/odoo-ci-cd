@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Création de la vue liste avocat -->
+    <record id="cabinet_avocat_avocat_view_list" model="ir.ui.view">
+        <field name="name">cabinet.avocat.avocat.view.list</field>
+        <field name="model">cabinet.avocat.avocat</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" />
+                <field name="situation_matrimoniale" />
+                <field name="taux_horaire" />
+                <field name="speciality_id" />
+            </list>
+        </field>
+    </record>
+    
+    <!-- Création de la vue form avocat -->
+    <record id="cabinet_avocat_avocat_view_form" model="ir.ui.view">
+        <field name="name">cabinet.avocat.avocat.view.form</field>
+        <field name="model">cabinet.avocat.avocat</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="situation_matrimoniale" />
+                            <field name="numero_bureau" />
+                        </group>
+                         <group>
+                            <field name="taux_horaire" />
+                            <field name="speciality_id" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="affaire_avocat" string="Affaires Affectées">
+                            <field name="affaire_ids" />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action du menu Avocat  -->
+    <record model="ir.actions.act_window" id="action_menu_avocat">
+        <field name="name">Avocat</field>
+        <field name="res_model">cabinet.avocat.avocat</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="cabinet_avocat_avocat_view_list"/>
+    </record>
+
+</odoo>

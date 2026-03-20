@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+   <menuitem
+    id="menu_notariat_principal"
+    name="Gestion Notariale"
+    sequence="-1"/>
+    <menuitem
+        id="menu_repertoire"
+        name="Répertoire"
+        parent="menu_notariat_principal"
+        sequence="1"/>
+    <menuitem
+        id="menu_notaire"
+        name="Notaires"
+        action="action_menu_notaire"
+        parent="menu_repertoire"
+        sequence="1"/>
+    <menuitem
+        id="menu_client"
+        name="Clients"
+        action="action_menu_client"
+        parent="menu_repertoire"
+        sequence="2"/>
+    <menuitem
+        id="menu_dossier"
+        name="Dossiers"
+        action="action_menu_dossier"
+        parent="menu_notariat_principal"
+        sequence="2"/>
+    <menuitem
+        id="menu_acte"
+        name="Actes Notariés"
+        action="action_menu_acte"
+        parent="menu_notariat_principal"
+        sequence="3"/>
+     <menuitem
+        id="menu_bien"
+        name="Biens Immobiliers"
+        action="action_menu_bien"
+        parent="menu_notariat_principal"
+        sequence="3"/>
+
+</odoo>
