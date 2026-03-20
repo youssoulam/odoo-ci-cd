@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    triggers {
+        githubPush()
+    }
+
     environment {
         IMAGE_NAME = "lamyou87/odoo18"
     }
@@ -34,7 +38,7 @@ pipeline {
 
         stage('Deploy Local Odoo') {
             steps {
-                sh 'docker-compose down'
+                sh 'docker-compose down || true'
                 sh 'docker-compose up -d --build'
             }
         }
