@@ -7,7 +7,7 @@ class Client(models.Model):
     _name = "cabinet.avocat.client"
     _description = "Les Clients"
 
-    name = fields.Char(string="Raison Sociale ou NOM", required=True)
+    name = fields.Char(string="NOM Personne ou Raison Sociale", required=True)
     type_client = fields.Selection(
         [
             ("personne", "Particulier"),
